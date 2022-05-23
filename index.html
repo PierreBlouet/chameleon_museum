@@ -1,0 +1,96 @@
+<head>
+	<title id="title"></title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="script.js" defer></script>
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+	<div class='box'>
+		<h3 id="title-page"></h3>
+	</div>
+	<button id="discover" class="btn-1">Discover</button>
+
+
+
+	<div id="container">
+		<div id="encima">
+			<ul class="card-list">
+
+			</ul>
+		</div>
+	</div>
+
+
+
+
+</body>
+
+
+<footer>
+	<img id='monkey' src='ape.png'>
+</footer>
+
+
+<script>
+	images = [
+		["https://cdn.discordapp.com/attachments/974890692054773760/978075354231095336/chameleon.png","JuliaOct#2692"],
+		["https://cdn.discordapp.com/attachments/974890692054773760/978046126194298951/unknown.png","Gibli#8095"],
+		["https://cdn.discordapp.com/attachments/974890692054773760/978042052786933760/c_19.jpg","Saeed#5172"],
+		["https://cdn.discordapp.com/attachments/974890692054773760/978021722777346158/IMG_6172.png","RoxyViv the Bunny 🐰#2082"],
+		["https://cdn.discordapp.com/attachments/974890692054773760/978014731145207838/RangoCamo.jpeg","Peceto || Syndicate Team#2564"],
+		["https://cdn.discordapp.com/attachments/974890692054773760/977964252281331804/20220522_225529.jpg","Pun10#9826"],
+		["https://cdn.discordapp.com/attachments/974890692054773760/977912720462585906/mng.jpg","Pemberani#6435"],
+		["https://cdn.discordapp.com/attachments/974890692054773760/977909408073932850/IMG_0536.jpg","Jajalee#6410"],
+		["https://cdn.discordapp.com/attachments/974890692054773760/977901040802361344/Untitled2_20220522154150.png","Ava.#1868"],
+		["https://cdn.discordapp.com/attachments/974890692054773760/977610423606075463/IMG_0938.png","Dallita | Camo#1117"]
+	]
+
+	window.onload = function () {
+		document.getElementById('title').innerHTML = "Camo Chameleon Fan Art Museum";
+		document.getElementById('title-page').innerHTML = 'Camo Chameleon fan museum \uD83E\uDD8E';
+
+		images.forEach(element => {
+				push_image(element)
+			});
+	};
+
+	function create_card(src){
+
+		let li = document.createElement('li');
+		li.classList.add("card");
+
+		let a = document.createElement('a');
+		a.classList.add("card-image");
+		a.href=src[0];
+		a.setAttribute('data-image-full',src[0]);
+
+		let img = document.createElement('img');
+		img.src = src[0]
+
+		a.appendChild(img)
+
+		let a2 = document.createElement('a');
+		a2.classList.add("card-description");
+		let h2 = document.createElement('h2');
+		h2.innerHTML = src[1];
+
+		a2.appendChild(h2);
+
+
+
+		li.appendChild(a);
+		li.appendChild(a2);
+
+        return li;
+	}
+
+	function push_image(src){
+		card_list = document.querySelector('.card-list');
+		card_list.appendChild(create_card(src))
+	}
+
+</script>
